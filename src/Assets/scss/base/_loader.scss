@@ -1,0 +1,11 @@
+.loader__container {
+  .loader {
+    border: 7px solid #f3f3f3;
+    border-radius: 50%;
+    border-right: 7px solid $primary-color;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+}

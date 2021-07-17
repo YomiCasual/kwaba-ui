@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+// -ms-overflow-style: none;
+// scrollbar-width: none;
+::-webkit-scrollbar {
+  background: $primary-black;
+  width: 0.6rem;
+  height: 0.8rem;
+}
+::-webkit-scrollbar-thumb {
+  background: $primary-ash;
+  border-radius: 1rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  background-image: url("../../Images/Icons/SelectIcon.svg");
+
+  background-position: 95% 50%;
+  background-size: 1rem 1rem;
+  background-repeat: no-repeat;
+  padding-right: 5%;
+  border: none;
+  // opacity: 0;
+}
+
+.select__wrapper {
+  position: relative;
+  border: 1px solid black;
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    font-size: 1rem;
+    top: 50%;
+    right: 1.4rem;
+    color: black;
+    transform: translateY(-50%);
+  }
+}

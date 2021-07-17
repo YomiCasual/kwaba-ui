@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router";
+import { ToastContainer } from "react-toastify";
 
-function App() {
+import PaymentBreakdown from "./components/PaymentBreakdown";
+import PaymentOption from "./components/PaymentOption";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        // pauseOnHover
+      />
+      {/* Same as */}
+      <Switch>
+        <Route exact path="/">
+          <PaymentOption />
+        </Route>
+        <Route exact path="/breakdown">
+          <PaymentBreakdown />
+        </Route>
+      </Switch>
+    </>
   );
-}
+};
 
 export default App;
